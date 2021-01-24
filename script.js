@@ -39,7 +39,7 @@ function checkRequired(inputArr) {
     });
   }
 
-  // Check input length
+// Check input length
 function checkLength(input, min, max) {
     if (input.value.length < min) {
       showError(
@@ -56,13 +56,17 @@ function checkLength(input, min, max) {
     }
   }
 
-  // Check passwords match
+// Check passwords match
 function checkPasswordsMatch(input1, input2) {
     if (input1.value !== input2.value) {
       showError(input2, 'Passwords do not match');
     }
   }
-  
+
+// Get fieldname
+function getFieldName(input) {
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+  }
 //Event listeners
 form.addEventListener('submit', function(e) {
     e.preventDefault();
