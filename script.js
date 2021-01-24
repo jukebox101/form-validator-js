@@ -28,6 +28,18 @@ function checkEmail(input) {
     }
   }
   
+// Check required fields
+function checkRequired(inputArr) {
+    inputArr.forEach(function(input) {
+      if (input.value.trim() === '') {
+        showError(input, `${getFieldName(input)} is required`);
+      } else {
+        showSuccess(input);
+      }
+    });
+  }
+
+  
 //Event listeners
 form.addEventListener('submit', function(e) {
     e.preventDefault();
